@@ -1,0 +1,237 @@
+# TrimSheetFast
+
+Last updated: 2026-10-02
+
+Public product description for TrimSheetFast. Current prices, plan limits, and legal terms are on https://trimsheetfast.com.
+
+## Product
+
+TrimSheetFast is a browser AI trim sheet generator.
+
+Website: https://trimsheetfast.com
+
+It turns a marker layout and a material prompt per region into one game-ready PBR texture atlas. Artists UV many modular meshes onto that atlas.
+
+TrimSheetFast does not generate 3D meshes. It does not paint a unique texture across one model's UV islands. It does not produce a seamless tileable material with no layout.
+
+## Related products
+
+The same maker ships three products.
+
+- TrimSheetFast (https://trimsheetfast.com): trim sheet atlases from guide lines, color IDs, and a prompt per color.
+- TextureFast (https://texturefast.com): AI textures for a UV-unwrapped 3D model. The model stays in the browser.
+- TexturesFast (https://texturesfast.com): seamless tileable PBR materials from a prompt, a photo, or an existing texture.
+
+Founder: Mike Caps (@mikecaps). Support: team@trimsheetfast.com and https://x.com/trimsheetfast.
+
+## What TrimSheetFast does
+
+One atlas, many meshes. The artist keeps the layout. The generator fills the regions the artist marked.
+
+- Guide lines cut the sheet into regions.
+- Each color ID is one material. Regions that share a color share that prompt.
+- A run needs at least two colors, each with a prompt.
+- A style preset keeps every region in the same art direction.
+- Quality levels are Junior, Mid, and Senior. Junior outputs at 1K. Mid and Senior can go up to 4K (4096×4096).
+- Base Color is generated first. Normal, Height, Roughness, Metallic, and Ambient Occlusion follow after the color is approved.
+- The in-app guide describes a real generation as taking about 40 seconds.
+- Meshes are unwrapped in the artist's own DCC. UV islands are placed on the matching regions.
+
+TrimSheetFast fits modular props, trims, pipes, panels, and kit pieces that share one sheet. A hero mesh that needs hand-painted texels, a mesh that still has to be modeled, or a seamless material with no atlas is a different job.
+
+Comparisons:
+
+- Adobe Substance 3D Painter paints unique detail on one mesh. TrimSheetFast is for kit pieces that share one sheet.
+- Photoshop is a common way to assemble a trim sheet by hand. TrimSheetFast generates the filled atlas from the layout.
+- Substance 3D Designer builds a parametric graph. TrimSheetFast exports fixed PNG maps for a layout you drew.
+- Quixel Mixer blended existing material layers. TrimSheetFast builds a custom atlas from prompts.
+- Generic image generators, including Stable Diffusion and ComfyUI setups, can draw a texture-like picture. They do not keep each prompt inside a marked region of one atlas.
+- TexturesFast makes a tiling material with no trim layout. TextureFast textures one UV model.
+
+## Who it is for
+
+- Game developers and studios building modular environments and prop kits.
+- Technical artists who own the atlas strategy for a project.
+- Hard-surface, prop, and kitbash artists who reuse trims across pieces.
+- Solo and small teams who need a shared sheet without painting every piece.
+- Asset-pack publishers who need one consistent material family.
+- Mobile, VR, and live-ops teams that share texel budget across many meshes.
+
+Onboarding in the product asks which of these the session is for: modular environments, props, archviz, or kitbash.
+
+Role pages: https://trimsheetfast.com/for
+
+- https://trimsheetfast.com/for/game-developers
+- https://trimsheetfast.com/for/technical-artists
+- https://trimsheetfast.com/for/modular-environment-teams
+- https://trimsheetfast.com/for/hard-surface-artists
+
+## Workflow
+
+1. Open the trim sheet editor. A desktop browser is the intended setup.
+2. Draw vertical and horizontal guide lines, or apply a layout preset.
+3. Lock the template and assign color IDs by clicking regions on the template or on the 3D plane.
+4. Write a short material prompt for each color. At least two colors.
+5. Choose a style preset, a quality level, and a resolution the level allows.
+6. Generate Base Color. Inspect it on the plane.
+7. Generate the other PBR maps when the color is right.
+8. Download PNG files.
+9. In Blender or another DCC, UV each mesh so its faces land on the matching region of the atlas.
+10. Assign the maps in Unity, Unreal Engine, Godot, or the DCC. Unity Lit shaders use Smoothness, so Roughness may need to be inverted.
+
+## Editor
+
+### Layout
+
+Guide lines come from the left ruler (vertical) and the top ruler (horizontal). Drag a line to move it. Drag an endpoint to shorten it. Double-click, or drag a line to the edge, to remove it.
+
+Layout presets:
+
+- H-trims: power-of-two horizontal strips for moldings, planks, and pipes.
+- V-pipes: power-of-two vertical columns for pipes, cables, and beams.
+- 8-band: eight matching horizontal strips.
+- Quad: four large squares for wall, floor, or ceiling tiles.
+- 3x3: nine cells for tiles, decals, and unique details.
+- Hero: a large panel plus supporting trim strips.
+
+### Color IDs
+
+red, orange, yellow, green, blue, purple, pink, maroon, brown.
+
+One prompt per color. Every region painted with that color uses that material. The placeholder in the editor is short, for example "brick, wood, metal". Specific prompts produce a clearer region.
+
+### Style presets
+
+- AAA Photorealistic
+- AAA Stylized
+- Cartoon
+- Hand-Painted
+- Toon / Cel-Shaded
+- Casual / Mobile Style
+- Pixel Art
+- Anime / Manga
+- Low-Poly Stylized
+- PS1 / Retro 3D
+- Borderlands
+- GTA VI
+- GTA Vice City
+- GTA San Andreas
+- Rust Survival Game
+- Minecraft
+- Roblox
+- Counter Strike 1.6
+- Counter Strike 2 (CS2)
+- Simpsons
+- Other, with a custom style field
+
+These are look names inside TrimSheetFast. They are not partnerships with those games or studios.
+
+### Quality and resolution
+
+- Junior, Mid, and Senior are the quality levels in the editor.
+- Output goes up to 4K (4096×4096).
+- Junior is limited to 1K.
+- Export format described on the FAQ is PNG.
+- The editor shows the token cost before generation. Current prices and allowances are on https://trimsheetfast.com/pricing.
+
+### Maps
+
+- Base Color (albedo): color without lighting. Generated first.
+- Normal
+- Height
+- Roughness
+- Metallic
+- Ambient Occlusion
+
+The editor can invert normal channels and adjust levels before download.
+
+### Preview
+
+The atlas is shown on a 3D plane. The trim sheet editor does not import a mesh.
+
+## Free tools
+
+No account:
+
+- Planner: https://trimsheetfast.com/tools/free-trimsheet-planner
+  Draw guide lines and color markers, preview the layout on a plane, download a PNG.
+- Builder: https://trimsheetfast.com/tools/free-trimsheet-builder
+  Fill regions with Base Color, Normal, Roughness, Metallic, AO, and Height, and export a 4096px atlas pack in the browser.
+
+The tools hub also lists browser 3D viewers, inspectors, and converters: https://trimsheetfast.com/tools
+
+The planner and builder prepare a layout or a hand-filled pack. The paid editor is what turns marker prompts into a generated atlas.
+
+## Plans
+
+Public names are Starter, Pro, Ultra, and Max. Monthly and yearly billing are both offered. Enterprise, including API access, is requested through the contact form: https://trimsheetfast.com/contact
+
+Paid plans include a commercial-use license for generated maps, subject to the Terms of Service. The public FAQ names games, films, ads, and other commercial projects.
+
+Support level depends on the plan and is listed on the pricing page.
+
+Cancel in Settings. Refund terms are on https://trimsheetfast.com/terms.
+
+- https://trimsheetfast.com/pricing
+- https://trimsheetfast.com/terms
+
+## Privacy
+
+The trim sheet editor does not ask for a 3D model.
+
+You keep ownership of your prompts and generated textures. The Terms say TrimSheetFast does not claim ownership of them.
+
+The pricing page labels paid plans NDA-safe and says the service does not train on your assets. The Privacy Policy says creative assets are not sold, are not used for advertising profiles, are not used to train AI models, and that TrimSheetFast does not store payment card details.
+
+Generation runs as an online service. The Terms grant a limited license to process prompts and outputs so the service can run. Legal text: https://trimsheetfast.com/privacy
+
+Keep client names and unreleased titles out of prompts unless your own policy allows them. Review outputs before shipping. The Terms describe generated textures as provided as-is.
+
+## Pages
+
+- Home: https://trimsheetfast.com
+- About: https://trimsheetfast.com/about
+- How it works: https://trimsheetfast.com/faq/how-does-trimsheetfast-work
+- Style presets: https://trimsheetfast.com/faq/what-are-trimsheetfast-style-presets
+- Resolution: https://trimsheetfast.com/faq/what-resolution-are-trimsheetfast-textures
+- Commercial use: https://trimsheetfast.com/faq/can-i-use-the-textures-commercially
+- Painter: https://trimsheetfast.com/vs/substance-3d-painter
+- Photoshop: https://trimsheetfast.com/vs/photoshop
+- Quixel Mixer: https://trimsheetfast.com/vs/quixel-mixer
+- Comparisons: https://trimsheetfast.com/vs
+- FAQ: https://trimsheetfast.com/faq
+- Contact: https://trimsheetfast.com/contact
+
+## Questions
+
+### What is TrimSheetFast?
+
+A browser generator for trim sheet atlases. You mark regions, prompt each color, and download a PBR sheet for many meshes.
+
+### Does it create 3D models?
+
+No.
+
+### Is it the same as TextureFast or TexturesFast?
+
+No. TextureFast textures one UV model. TexturesFast makes seamless materials. TrimSheetFast makes a shared atlas with a layout you control.
+
+### What maps does it export?
+
+Base Color, then Normal, Height, Roughness, Metallic, and Ambient Occlusion. PNG, up to 4K on Mid and Senior.
+
+### Do I need UVs?
+
+Yes, on the meshes, in your own software. The atlas works when UV islands sit on the regions you marked. TrimSheetFast does not unwrap the mesh.
+
+### Can I use the textures commercially?
+
+Yes on paid plans, under the Terms of Service. Review the output before you ship it.
+
+### Why do results look wrong?
+
+Unclear region splits, fewer than two prompted colors, or a vague prompt. Clean cuts and a specific material name per color are the usual fix.
+
+### Is there an API?
+
+Enterprise API access is requested through https://trimsheetfast.com/contact.
