@@ -38,7 +38,7 @@ This repository is only about TrimSheetFast.
 
 ## Plans
 
-Public subscription names are Starter, Pro, Ultra, and Max, with monthly and yearly billing. Enterprise, including a request for API access, goes through the contact form. This repository does not document an API.
+Public subscription names are Starter, Pro, Ultra, and Max, with monthly and yearly billing. Enterprise, including API access, is requested through the contact form.
 
 Prices, token allowances, and what each plan includes change. Read them on https://trimsheetfast.com/pricing. The generate control shows the token cost for the quality level and resolution you picked.
 
@@ -48,7 +48,7 @@ Cancel a subscription in Settings.
 
 The trim sheet editor does not ask you to upload a 3D model. You draw a layout and write prompts.
 
-The public pricing page labels paid plans NDA-safe and says the service does not train on your assets. The Privacy Policy is the legal text: no sale of creative assets, no advertising profiles, no card storage by TrimSheetFast. Read https://trimsheetfast.com/privacy before you put client names into a prompt. Do not treat a marketing label as a promise that generation happens entirely offline.
+The pricing page labels paid plans NDA-safe and says the service does not train on your assets. The Privacy Policy is the legal text: no sale of creative assets, no advertising profiles, no card storage by TrimSheetFast. Generation runs online. Details are on https://trimsheetfast.com/privacy. Keep client names out of prompts unless your own policy allows them.
 
 ## Official sources
 
